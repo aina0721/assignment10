@@ -16,7 +16,7 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private string[] nameArray;
 
     int index;
-    int count;
+    public int count;
 
     void Update()
     {
@@ -32,7 +32,7 @@ public class ImageManager : MonoBehaviour
 
     public void ChangeImage()
     {
-        if (count == 4)
+        if (count == 5)
         {
             SceneManager.LoadScene("GameClear");
         }
@@ -50,6 +50,7 @@ public class ImageManager : MonoBehaviour
     {
         if (index == 0)
         {
+            count++;
             questionImage.color = new Color(1.0f, 1.0f, 1.0f);
             Maru_Image.SetActive(true);
             Invoke("ChangeImage", 1.0f);
